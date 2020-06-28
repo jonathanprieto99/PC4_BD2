@@ -1,11 +1,13 @@
 from flask import Flask, request, redirect, render_template, Response
 from backend import knn_search
 import json
+import os
 
 # You can change this to any folder on your system
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
+app.secret_key = os.environ.get('SECRET_KEY')
 
 
 def allowed_file(filename):
@@ -44,4 +46,4 @@ def sendjson():
     return Response(json.dumps(galeria), mimetype='application/json')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
