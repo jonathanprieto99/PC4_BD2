@@ -2,13 +2,15 @@ from flask import Flask, request, redirect, render_template, Response
 from backend import knn_search
 import json
 import os
+from werkzeug.utils import secure_filename
+
 
 # You can change this to any folder on your system
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY')
-
+UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER')
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -32,8 +34,12 @@ def upload_image():
 
         if file and allowed_file(file.filename):
             # The image file seems valid! Detect faces and return the result.
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
             knn_search(file, int(k))
-            return render_template("index.html")
+            print(filename)
+            return render_template("index.html", filename=filename)
 
     # If no valid image file was uploaded, show the file upload form:
     return render_template("index.html")
