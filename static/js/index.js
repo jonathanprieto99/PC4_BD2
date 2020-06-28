@@ -1,42 +1,16 @@
 $(function(){
-    var galleryWidget = $("#gallery").dxGallery({
+    $("#gallery").dxGallery({
         dataSource: gallery,
-        height: 300,
+        height: 440,
+        width: "100%",
         loop: true,
-        slideshowDelay: 2000,
-        showNavButtons: true,
-        showIndicator: true
-    }).dxGallery("instance");
-
-    $("#useLoop").dxCheckBox({
-        value: true,
-        text: "Loop mode",
-        onValueChanged: function(data) {
-            galleryWidget.option("loop", data.value);
-        }
-    });
-
-    $("#slideShow").dxCheckBox({
-        value: true,
-        text: "Slide show",
-        onValueChanged: function(data) {
-            galleryWidget.option("slideshowDelay", data.value? 2000 : 0);
-        }
-    });
-
-    $("#showNavButtons").dxCheckBox({
-        value: true,
-        text: "Navigation buttons",
-        onValueChanged: function(data) {
-            galleryWidget.option("showNavButtons", data.value);
-        }
-    });
-
-    $("#showIndicator").dxCheckBox({
-        value: true,
-        text: "Indicator",
-        onValueChanged: function(data) {
-            galleryWidget.option("showIndicator", data.value);
+        showIndicator: false,
+        itemTemplate: function (item, index) {
+            var result = $("<div>");
+            $("<img>").attr("src", item.Image).appendTo(result);
+            console.log("Score: "+item.Score);
+            $("<div>").addClass("item-price").text(item.Score, { maximumFractionDigits: 0 }).appendTo(result);
+            return result;
         }
     });
 });

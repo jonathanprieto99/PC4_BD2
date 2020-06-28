@@ -11,6 +11,15 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="R Skeletons" level="application" />
     <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="cldr" level="application" />
+    <orderEntry type="library" name="event" level="application" />
+    <orderEntry type="library" name="supplemental" level="application" />
+    <orderEntry type="library" name="unresolved" level="application" />
+    <orderEntry type="library" name="globalize" level="application" />
+    <orderEntry type="library" name="message" level="application" />
+    <orderEntry type="library" name="number" level="application" />
+    <orderEntry type="library" name="currency" level="application" />
+    <orderEntry type="library" name="date" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />

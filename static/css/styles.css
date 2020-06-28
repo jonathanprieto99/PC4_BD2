@@ -1,27 +1,15 @@
-.widget-container {
-    margin-right: 240px;
+.dx-gallery-item {
+    width: 500px;
+    max-width: 100%;
 }
 
-#gallery {
-    margin: auto;
-    max-width: 450px;
+.dx-gallery-item img {
+    height: 300px;
+    width: 450px;
+    max-width: 100%;
 }
 
-.options {
-    padding: 20px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 180px;
-    top: 0;
-    background-color: rgba(191, 191, 191, 0.15);
-}
-
-.caption {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.option {
-    margin-top: 10px;
+.dx-gallery-item .item-price {
+    font-size: 20px;
+    font-weight: bold;
 }
