@@ -11,9 +11,9 @@ def knn_search (file_stream, k):
             index = json.load (index_file)
     else:
         print ("index does not exist")
-        for root, dirs, files in os.walk ("lfw", topdown=True):
+        for root, dirs, files in os.walk ("static/lfw", topdown=True):
             for name in dirs:
-                name = "lfw/" + name
+                name = "static/lfw/" + name
                 for filename in os.listdir (name):
                     pathname = name + "/" + filename
         #pathname = 'fotos_bd/'
@@ -33,6 +33,15 @@ def knn_search (file_stream, k):
 
     query_encoding = get_query_encoding (file_stream)
     k_nearest_neighbors = get_knn_ED (index, query_encoding, k)
+
+    with open ('static/json/import.json', 'w+') as output:
+        output.write ("[")
+        for filename, distance in k_nearest_neighbors:
+            obj = {'filename':filename, 'distance':distance}
+            output.write (json.dumps (obj))
+            output.write (",")
+        output.seek(output.tell () - 1)
+        output.write ("]")
     return k_nearest_neighbors
 
 def get_query_encoding (file_stream):
