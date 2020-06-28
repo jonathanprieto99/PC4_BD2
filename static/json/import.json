@@ -1,0 +1,12 @@
+[
+  {
+    "ID": "1",
+    "Score": "100",
+    "Image": "/static/fotos_test/foto1.jpg"
+  },
+  {
+    "ID": "2",
+    "Score": "90",
+    "Image": "/static/fotos_test/foto2.jpg"
+  }
+]

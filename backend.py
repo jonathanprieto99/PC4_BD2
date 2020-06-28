@@ -87,6 +87,6 @@ def MD (x, y):
             distance += abs (a[i] - b[i])
     return distance
 
-photo_path = "fotos_query/avril_lavigne_query.jpg"
-result = knn_search (photo_path, 3)
-print (result)
+#photo_path = "fotos_query/avril_lavigne_query.jpg"
+#result = knn_search (photo_path, 3)
+#print (result)

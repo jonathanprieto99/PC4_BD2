@@ -1,4 +1,4 @@
-var gallery;
-$.getJSON('static/json/import.json', function(gallery) {
-  console.log(gallery);
+var galeria;
+$.getJSON('static/json/import.json', function(galeria) {
+  console.log(galeria);
 });

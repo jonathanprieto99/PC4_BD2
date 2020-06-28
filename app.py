@@ -1,5 +1,6 @@
-from flask import Flask, jsonify, request, redirect, render_template
+from flask import Flask, request, redirect, render_template, Response
 from backend import knn_search
+import json
 
 # You can change this to any folder on your system
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -34,6 +35,13 @@ def upload_image():
 
     # If no valid image file was uploaded, show the file upload form:
     return render_template("index.html")
+
+@app.route('/galeria', methods=['GET'])
+def sendjson():
+    print("Asked for JSON.")
+    with open('static/json/import.json') as f:
+        galeria = json.load(f)
+    return Response(json.dumps(galeria), mimetype='application/json')
 
 if __name__ == "__main__":
     app.run(debug=True)
