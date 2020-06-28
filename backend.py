@@ -37,7 +37,7 @@ def knn_search (file_stream, k):
     with open ('static/json/import.json', 'w+') as output:
         output.write ("[")
         for filename, distance in k_nearest_neighbors:
-            obj = {'filename':filename, 'distance':distance}
+            obj = {'Image':filename, 'Score':distance}
             output.write (json.dumps (obj))
             output.write (",")
         output.seek(output.tell () - 1)

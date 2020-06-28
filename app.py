@@ -30,7 +30,7 @@ def upload_image():
 
         if file and allowed_file(file.filename):
             # The image file seems valid! Detect faces and return the result.
-            knn_search(file, k)
+            knn_search(file, int(k))
             return render_template("index.html")
 
     # If no valid image file was uploaded, show the file upload form:
