@@ -10,7 +10,7 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY')
-UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER')
+app.config['UPLOAD_FOLDER'] = os.environ.get('UPLOAD_FOLDER')
 
 def allowed_file(filename):
     return '.' in filename and \
