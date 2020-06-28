@@ -20,7 +20,7 @@ def allowed_file(filename):
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_image():
-
+    filepath = "no"
     if request.method == 'POST':
         if 'file' not in request.files:
             return redirect(request.url)
@@ -40,7 +40,7 @@ def upload_image():
             knn_search(file, int(k))
             return render_template("index.html", filename=filepath)
 
-    return render_template("index.html")
+    return render_template("index.html", filename=filepath)
 
 @app.route('/galeria', methods=['GET'])
 def sendjson():
