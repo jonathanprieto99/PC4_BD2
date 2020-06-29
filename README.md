@@ -21,6 +21,6 @@ Para los resultados no tomamos en cuenta el tiempo de proesamiento de las imagá
 | N = 400   | 0.001824s |  0.42s         |
 | N = 800   | 0.005463s |  0.50s         |
 | N = 1600  | 0.011144s |  0.61s         |
-| N = 3200  |  1        |  1.16s         |
+| N = 3200  | 0.024127s |  1.16s         |
 | N = 6400  |  1        |  1.66s         |
 | N = 12800 |  1        |  1             |
