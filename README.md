@@ -16,9 +16,9 @@ Para cada heurística se realizaron busquedas con tres fotos externas de tres pe
 Para los resultados no tomamos en cuenta el tiempo de proesamiento de las imagágenes y la obtención de sus vectores característicos. Se tomó únicamente en cuenta el tiempo de la obtención de los k elementos más cercanos. Estas pruebas se hicieron localmente y no sobre el código fuente de la aplicación web, ya que Heroku nos limitaba bastante. Para las mediciones del KNN'Secuencial, se agregó una variable N que definía la cantidad de fotos a tomar de la colección total. Luego, se usó la librería externa `time` y el método `time` para obtener el tiempo antes y después de la medición, y con estos calcular el tiempo de ejecución.
 | Tiempo    | KNN-RTree | KNN-Secuencial |
 | --------- | --------- | -------------- |
-| N = 100   |  1        |  0.36s         |
-| N = 200   |  1        |  0.39s         |
-| N = 400   |  1        |  0.42s         |
+| N = 100   | 0.000447s |  0.36s         |
+| N = 200   | 0.000919s |  0.39s         |
+| N = 400   | 0.001824s |  0.42s         |
 | N = 800   |  1        |  0.50s         |
 | N = 1600  |  1        |  0.61s         |
 | N = 3200  |  1        |  1.16s         |
