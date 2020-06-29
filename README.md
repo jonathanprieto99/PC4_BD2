@@ -23,6 +23,6 @@ Para los resultados no tomamos en cuenta el tiempo de proesamiento de las imagá
 | N = 1600  | 0.011144s |  0.61s         |
 | N = 3200  | 0.024127s |  1.16s         |
 | N = 6400  | 0.059096s |  1.66s         |
-| N = 12800 | 0.105118s |  1             |
+| N = 12800 | 0.105118s |  2.72s         |
 
 Como podemos ver, el algoritmo de knn funciona significativamente más rápido al indexar los vectores caracteristicos con el R-tree. Este performance se podría mejorar aun más usando métodos que no sufran de la "maldicion de dimensionalidad" que indica que mientras más dimensiones tenga un R-tree sera mas lento. Aun así habiendolo definido con 128 dimensiones, incrmeneta lo suficiente como para justificar su uso en este contexto. 
